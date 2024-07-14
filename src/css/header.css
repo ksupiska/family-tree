@@ -1,17 +1,54 @@
 /* header.css */
+
+/* Общий стиль для header */
 .header {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .logo {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
+  display: flex;
+  justify-content: center; /* Центрирование по горизонтали */
+  align-items: center; /* Центрирование по вертикали */
+  background-color: #f8f9fa;
+  padding: 3% 5%;
+  border-radius: 8px;
+  position: relative; /* Для абсолютного позиционирования логотипа */
+}
+
+/* Стили для nav */
+nav {
+  display: flex; /* Flexbox для nav */
+  justify-content: center; /* Центрирование nav по горизонтали */
+  flex: 1; /* Занимаем всё доступное пространство */
+}
+
+/* Стили для ul */
+nav ul {
+  list-style-type: none; /* Убираем маркеры списка */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Делаем горизонтальное расположение */
+  gap: 15px; /* Промежуток между элементами списка */
+}
+
+/* Стили для li */
+nav ul li {
+  display: inline; /* Делаем элементы в одну строку */
+}
+
+/* Стили для ссылок */
+nav ul li a {
+  text-decoration: none; /* Убираем подчеркивание */
+  color: #007bff; /* Цвет текста */
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s; /* Плавный переход для фона и цвета текста */
+}
+
+/* Стили для ссылок при наведении */
+nav ul li a:hover {
+  background-color: #007bff; /* Цвет фона при наведении */
+  color: white; /* Цвет текста при наведении */
+}
+
+/* Дополнительный стиль для лого */
+.logo {
+  position: absolute; /* Абсолютное позиционирование */
+  left: 20px; /* Отступ от левого края */
+}

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { auth } from '../database/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth'; // Импортируем метод
 
-import Header from '../components/Header';
 import '../css/login.css'; // Импортируем стили
 
 const LoginPage = () => {
@@ -24,7 +23,6 @@ const LoginPage = () => {
 
     return (
         <div>
-            <Header /> {/* Вставляем компонент Header */}
             <div className="login-container">
                 <h2>Вход</h2>
                 <div className="login-input-container">

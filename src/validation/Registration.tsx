@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { auth } from '../database/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth'; // Импортируем метод
 
-import Header from '../components/Header';
 import '../css/registration.css'
 
 const RegistrationPage = () => {
@@ -24,7 +23,6 @@ const RegistrationPage = () => {
 
     return (
         <div>
-            <Header /> {/* Вставляем компонент Header */}
             <div className="registration-container">
                 <h2>Регистрация</h2>
                 <div className="registration-input-container">
