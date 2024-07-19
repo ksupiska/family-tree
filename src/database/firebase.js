@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getDatabase, ref, push, remove, update, get, child, onValue } from "firebase/database";
+import { getDatabase, ref, push, remove, update, get } from "firebase/database";
 import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
@@ -112,24 +112,3 @@ export const getUserById = (userId) => {
       throw error; // Пробрасываем ошибку для обработки в другом месте
     });
 };
-
-// Пример использования функций
-// addUser({ name: "John Doe", age: 30 }).then((userId) => {
-//   console.log("User added with ID:", userId);
-// });
-
-// deleteUser("userId123").then(() => {
-//   console.log("User deleted successfully");
-// });
-
-// updateUser("userId123", { age: 31 }).then(() => {
-//   console.log("User updated successfully");
-// });
-
-// getUsers().then((usersList) => {
-//   console.log("Users:", usersList);
-// });
-
-// getUserById("userId123").then((user) => {
-//   console.log("User:", user);
-// });

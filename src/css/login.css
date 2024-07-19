@@ -60,3 +60,9 @@
   color: #007bff;
   text-decoration: none;
 }
+
+.login-success-message {
+  color: green;
+  font-size: 1.2em;
+  margin-top: 10px;
+}
