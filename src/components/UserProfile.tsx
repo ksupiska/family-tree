@@ -13,8 +13,9 @@ const UserProfile = () => {
   const [dob, setDob] = useState<string>('');
   const [description, setDescription] = useState<string>('');
   const [avatarFile, setAvatarFile] = useState<File | null>(null);
-  const [isEditing, setIsEditing] = useState<boolean>(true);
+  const [isEditing, setIsEditing] = useState<boolean>(false);
   const [userId, setUserId] = useState<string>(''); // ID пользователя, который нужно получить
+  const [isLoading, setIsLoading] = useState<boolean>(true); // Добавлено для контроля состояния загрузки
   const navigate = useNavigate();
 
   const getCurrentUserId = () => {
@@ -31,7 +32,8 @@ const UserProfile = () => {
         navigate('/login'); // Перенаправление на страницу входа, если пользователь не аутентифицирован
       } else {
         setUserId(currentUserId);
-        loadUserData(currentUserId);
+        await loadUserData(currentUserId);
+        setIsLoading(false); // Завершение загрузки данных
       }
     };
 
@@ -105,12 +107,25 @@ const UserProfile = () => {
       {isEditing ? (
         <form onSubmit={handleSubmit}>
           <div className='form-profile'>
-            <label htmlFor="avatar">
-              Выберите аватар
-            </label>
-            <input name='avatar' id='avatar' type="file" accept="image/*" onChange={handleFileChange} />
-            <img src={avatar || '/default-avatar.png'} alt="Avatar" className="avatar-img" />
-
+            <div className='avatar-container'>
+              <label htmlFor="avatar" className='avatar-label'>
+                Выберите аватар
+              </label>
+              <input
+                name='avatar'
+                id='avatar'
+                type="file"
+                accept="image/*"
+                className='avatar-input'
+                onChange={handleFileChange}
+              />
+              <img src={avatar || '/default-avatar.png'} alt="Avatar" className="avatar-preview" />
+              {isEditing && (
+                <button className='avatar-upload-button' onClick={() => document.getElementById('avatar')?.click()}>
+                  Загрузить новый аватар
+                </button>
+              )}
+            </div>
             <input
               placeholder='Введите ваше имя'
               name='name'
