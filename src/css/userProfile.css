@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+.user-profile {
+  justify-content: center;
+  padding: 10%;
+}
+
+input[type="text"],
+textarea {
+  height: 30px;
+  font-size: 16px;
+  border-radius: 5px;
+  display: block;
+  margin: 1%;
+}
+textarea {
+  max-width: 400px;
+  min-height: 30px;
+  min-width: 300px;
+}
+input[type="file"] {
+  background-color: blue;
+  font-size: 16px;
+}
+input[type="text"]:hover {
+  background-color: rgb(193, 193, 193);
+  transition: 0.3s ease-in-out;
+}
+.button-save {
+  padding: 1%;
+  background-color: rgb(47, 255, 0);
+  border-radius: 15px;
+  font-size: 16px;
+}
+.button-save:hover {
+  background-color: rgb(0, 198, 0);
+  color: white;
+  transition: 0.5s ease-in-out;
+}
+
+.avatar-img {
+  max-width: 25%;
+  max-height: 25%;
+  border-radius: 20px;
+}
+
+.profile-view {
+  background-color: rgb(205, 235, 255);
+  width: 80%;
+  padding: 2%;
+  border-radius: 20px;
+  flex-direction: column; /* Располагаем элементы по вертикали */
+  align-items: center; /* Центрируем элементы по горизонтали */
+  justify-content: center; /* Центрируем элементы по вертикали */
+  margin: auto; /* Выравнивание по центру относительно родителя */
+}
+section {
+  display: block;
+  margin-left: 5%;
+  font-size: 20px;
+  font-family: "Nunito", sans-serif;
+  margin: auto;
+}
+.button-edit {
+  background-color: rgb(205, 235, 255);
+  padding: 2%;
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  border-radius: 7px;
+  border-color: white;
+  border-style: double;
+}
+.button-edit:hover {
+  background-color: rgb(173, 222, 255);
+  color: white;
+  transition: 0.5s ease-in-out;
+  border-color: white;
+}
+.button-logout {
+  background-color: red;
+  font-family: "Nunito", sans-serif;
+  padding: 0.5%;
+  font-size: 20px;
+  border-radius: 7px;
+  border-style: double;
+}
+.button-logout:hover {
+  background-color: rgb(218, 0, 0);
+  color: white;
+  transition: 0.5s ease-in-out;
+  border-color: white;
+}
